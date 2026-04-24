@@ -1173,6 +1173,162 @@ a.page:hover {
 }
 .btn-note:hover { background: #009d80; color: #fff; }
 
+/* ===== ヒーローSVGキャラクター ===== */
+.hero-bubble {
+  background: white;
+  border-radius: 18px 18px 18px 6px;
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  line-height: 1.6;
+  text-align: center;
+  position: relative;
+  margin-bottom: 12px;
+}
+.hero-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 24px;
+  border: 10px solid transparent;
+  border-top-color: white;
+  border-bottom: none;
+}
+.hero-chara-svg {
+  width: 170px;
+  height: auto;
+  animation: float-big 4s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
+}
+.hero-chara-label {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* ===== みかん一家のひとこと ===== */
+.family-strip {
+  background: linear-gradient(90deg, #FFF9F0 0%, #FFF4E6 50%, #FFF9F0 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+}
+.family-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.family-strip-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+}
+.family-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.fs-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fs-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+.fs-svg {
+  width: 54px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+}
+.fs-info { flex: 1; min-width: 0; }
+.fs-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 3px;
+}
+.fs-quote {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* ===== みかん一家 × note CTA ===== */
+.family-cta-section {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFFDF0 40%, #E8FAF7 100%);
+  padding: 64px 24px;
+  border-top: 1px solid var(--border);
+}
+.family-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.family-cta-charas {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.fcta-svg {
+  width: 90px;
+  height: auto;
+  margin-left: -18px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  transition: transform 0.35s ease;
+}
+.fcta-svg:first-child { margin-left: 0; }
+.fcta-papa { width: 115px; transform: translateY(-12px); z-index: 2; }
+.fcta-puchi { width: 74px; }
+.family-cta-charas:hover .fcta-mama  { transform: rotate(-6deg) translateY(-4px); }
+.family-cta-charas:hover .fcta-papa  { transform: translateY(-22px) scale(1.05); }
+.family-cta-charas:hover .fcta-chibi { transform: rotate(6deg) translateY(-4px); }
+.family-cta-charas:hover .fcta-puchi { transform: translateY(-4px); }
+.family-cta-text {
+  text-align: center;
+  flex: 1;
+  min-width: 240px;
+}
+.family-cta-text h2 {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  font-family: 'Noto Serif JP', serif;
+}
+.family-cta-text h2 span { color: #00B898; }
+.family-cta-text p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 22px;
+}
+.family-cta-text .btn-note {
+  display: inline-block;
+  width: auto;
+  padding: 13px 30px;
+  font-size: 0.95rem;
+  border-radius: 28px;
+}
+
 /* ===== レスポンシブ ===== */
 @media (max-width: 1024px) {
   .content-wrapper {
@@ -1189,7 +1345,14 @@ a.page:hover {
   }
 
   .hero-illustration { display: none; }
+
+  .family-strip-grid { grid-template-columns: repeat(2, 1fr); }
+  .family-cta-inner { gap: 24px; }
+  .fcta-svg { width: 75px; }
+  .fcta-papa { width: 95px; }
+  .fcta-puchi { width: 62px; }
 }
+
 
 @media (max-width: 768px) {
   .main-nav { display: none; }

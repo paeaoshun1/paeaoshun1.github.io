@@ -11,6 +11,121 @@
 </head>
 <body>
 
+  <!-- SVGキャラクター定義（非表示） -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- パパみかん：強い眉・自信のある笑顔 -->
+    <symbol id="chara-papa" viewBox="0 0 100 120">
+      <ellipse cx="50" cy="118" rx="28" ry="4" fill="rgba(0,0,0,0.08)"/>
+      <ellipse cx="50" cy="70" rx="43" ry="41" fill="#FF8C00"/>
+      <ellipse cx="34" cy="52" rx="15" ry="10" fill="#FFA733" opacity="0.35"/>
+      <ellipse cx="50" cy="29" rx="7" ry="5" fill="#E07000" opacity="0.45"/>
+      <rect x="48" y="20" width="4" height="11" rx="2" fill="#388E3C"/>
+      <ellipse cx="55" cy="12" rx="9" ry="13" fill="#43A047" transform="rotate(15 55 12)"/>
+      <line x1="51" y1="20" x2="58" y2="7" stroke="#2E7D32" stroke-width="1" opacity="0.5"/>
+      <path d="M 27 57 Q 37 52 45 55" stroke="#3E2723" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      <path d="M 55 55 Q 63 52 73 57" stroke="#3E2723" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      <circle cx="38" cy="66" r="7" fill="#2D2D2D"/>
+      <circle cx="62" cy="66" r="7" fill="#2D2D2D"/>
+      <circle cx="41" cy="63" r="2.5" fill="white"/>
+      <circle cx="65" cy="63" r="2.5" fill="white"/>
+      <circle cx="43" cy="67" r="1.2" fill="white"/>
+      <circle cx="67" cy="67" r="1.2" fill="white"/>
+      <path d="M 35 81 Q 50 95 65 81" stroke="#3E2723" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="8" cy="78" rx="9" ry="7" fill="#FF8C00" transform="rotate(-25 8 78)"/>
+      <ellipse cx="92" cy="78" rx="9" ry="7" fill="#FF8C00" transform="rotate(25 92 78)"/>
+      <circle cx="4" cy="85" r="6" fill="#FF8C00"/>
+      <circle cx="96" cy="85" r="6" fill="#FF8C00"/>
+    </symbol>
+
+    <!-- ママみかん：まつ毛・バラ色の頬・大きな笑顔・花飾り -->
+    <symbol id="chara-mama" viewBox="0 0 100 120">
+      <ellipse cx="50" cy="118" rx="28" ry="4" fill="rgba(0,0,0,0.08)"/>
+      <ellipse cx="50" cy="70" rx="43" ry="41" fill="#FFA726"/>
+      <ellipse cx="34" cy="52" rx="15" ry="10" fill="#FFCC80" opacity="0.35"/>
+      <ellipse cx="50" cy="29" rx="7" ry="5" fill="#E09000" opacity="0.45"/>
+      <rect x="48" y="20" width="4" height="11" rx="2" fill="#388E3C"/>
+      <ellipse cx="44" cy="12" rx="9" ry="13" fill="#43A047" transform="rotate(-15 44 12)"/>
+      <ellipse cx="44" cy="4" rx="3.5" ry="4" fill="#F48FB1" transform="rotate(-30 44 4)"/>
+      <ellipse cx="50" cy="2" rx="3.5" ry="4" fill="#F48FB1"/>
+      <ellipse cx="56" cy="4" rx="3.5" ry="4" fill="#F48FB1" transform="rotate(30 56 4)"/>
+      <ellipse cx="44" cy="10" rx="3.5" ry="4" fill="#F48FB1" transform="rotate(30 44 10)"/>
+      <ellipse cx="56" cy="10" rx="3.5" ry="4" fill="#F48FB1" transform="rotate(-30 56 10)"/>
+      <circle cx="50" cy="7" r="3" fill="#FFD54F"/>
+      <line x1="30" y1="57" x2="27" y2="51" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="35" y1="54" x2="33" y2="48" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="41" y1="53" x2="41" y2="47" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="59" y1="53" x2="59" y2="47" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="65" y1="54" x2="67" y2="48" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="70" y1="57" x2="73" y2="51" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="38" cy="66" r="7" fill="#2D2D2D"/>
+      <circle cx="62" cy="66" r="7" fill="#2D2D2D"/>
+      <circle cx="41" cy="63" r="2.8" fill="white"/>
+      <circle cx="65" cy="63" r="2.8" fill="white"/>
+      <ellipse cx="22" cy="76" rx="10" ry="6" fill="#FF7043" opacity="0.3"/>
+      <ellipse cx="78" cy="76" rx="10" ry="6" fill="#FF7043" opacity="0.3"/>
+      <path d="M 31 80 Q 50 97 69 80" stroke="#3E2723" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="7" cy="74" rx="9" ry="7" fill="#FFA726" transform="rotate(-40 7 74)"/>
+      <ellipse cx="93" cy="74" rx="9" ry="7" fill="#FFA726" transform="rotate(40 93 74)"/>
+      <circle cx="2" cy="80" r="6" fill="#FFA726"/>
+      <circle cx="98" cy="80" r="6" fill="#FFA726"/>
+    </symbol>
+
+    <!-- チビみかん：大きな目・ワクワク表情・両手を上げている -->
+    <symbol id="chara-chibi" viewBox="0 0 100 120">
+      <ellipse cx="50" cy="117" rx="24" ry="4" fill="rgba(0,0,0,0.08)"/>
+      <ellipse cx="50" cy="73" rx="38" ry="37" fill="#FF7043"/>
+      <ellipse cx="36" cy="57" rx="13" ry="9" fill="#FF8A65" opacity="0.4"/>
+      <ellipse cx="50" cy="36" rx="6" ry="4.5" fill="#E64A19" opacity="0.45"/>
+      <rect x="48" y="27" width="4" height="11" rx="2" fill="#388E3C"/>
+      <ellipse cx="50" cy="17" rx="8" ry="13" fill="#43A047" transform="rotate(5 50 17)"/>
+      <path d="M 27 59 Q 37 53 45 57" stroke="#3E2723" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 55 57 Q 63 53 73 59" stroke="#3E2723" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="37" cy="69" r="9.5" fill="#2D2D2D"/>
+      <circle cx="63" cy="69" r="9.5" fill="#2D2D2D"/>
+      <circle cx="41" cy="64" r="3.5" fill="white"/>
+      <circle cx="67" cy="64" r="3.5" fill="white"/>
+      <circle cx="43" cy="70" r="1.5" fill="white"/>
+      <circle cx="69" cy="70" r="1.5" fill="white"/>
+      <path d="M 33 84 Q 50 100 67 84" stroke="#3E2723" stroke-width="2.5" stroke-linecap="round" fill="#FF5722"/>
+      <rect x="39" y="85" width="9" height="6" rx="2" fill="white"/>
+      <rect x="52" y="85" width="9" height="6" rx="2" fill="white"/>
+      <ellipse cx="10" cy="62" rx="8" ry="6" fill="#FF7043" transform="rotate(-55 10 62)"/>
+      <ellipse cx="90" cy="62" rx="8" ry="6" fill="#FF7043" transform="rotate(55 90 62)"/>
+      <circle cx="6" cy="55" r="6" fill="#FF7043"/>
+      <circle cx="94" cy="55" r="6" fill="#FF7043"/>
+    </symbol>
+
+    <!-- プチみかん：半目・ニヤリ笑い・リボン飾り・冷静ツッコミ -->
+    <symbol id="chara-puchi" viewBox="0 0 100 120">
+      <ellipse cx="50" cy="117" rx="22" ry="4" fill="rgba(0,0,0,0.08)"/>
+      <ellipse cx="50" cy="75" rx="34" ry="33" fill="#FFB74D"/>
+      <ellipse cx="37" cy="61" rx="12" ry="8" fill="#FFCC80" opacity="0.4"/>
+      <ellipse cx="50" cy="42" rx="6" ry="4" fill="#FB8C00" opacity="0.45"/>
+      <rect x="48" y="33" width="4" height="11" rx="2" fill="#388E3C"/>
+      <ellipse cx="44" cy="23" rx="8" ry="12" fill="#43A047" transform="rotate(-10 44 23)"/>
+      <path d="M 37 20 Q 41 15 45 20 Q 41 24 37 20Z" fill="#F06292"/>
+      <path d="M 45 20 Q 49 15 53 20 Q 49 24 45 20Z" fill="#F06292"/>
+      <circle cx="45" cy="20" r="2.2" fill="#C2185B"/>
+      <path d="M 31 62 Q 38 60 45 61" stroke="#3E2723" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 55 61 Q 62 60 69 62" stroke="#3E2723" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <circle cx="38" cy="71" r="7" fill="#2D2D2D"/>
+      <circle cx="62" cy="71" r="7" fill="#2D2D2D"/>
+      <path d="M 30 71 Q 38 63 46 71Z" fill="#FFB74D"/>
+      <path d="M 54 71 Q 62 63 70 71Z" fill="#FFB74D"/>
+      <path d="M 30 71 Q 38 63 46 71" stroke="#3E2723" stroke-width="2" fill="none"/>
+      <path d="M 54 71 Q 62 63 70 71" stroke="#3E2723" stroke-width="2" fill="none"/>
+      <circle cx="40" cy="73" r="2" fill="white"/>
+      <circle cx="64" cy="73" r="2" fill="white"/>
+      <path d="M 37 83 Q 49 91 62 85" stroke="#3E2723" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="14" cy="82" rx="7" ry="6" fill="#FFB74D" transform="rotate(-10 14 82)"/>
+      <ellipse cx="86" cy="82" rx="7" ry="6" fill="#FFB74D" transform="rotate(10 86 82)"/>
+      <circle cx="9" cy="87" r="5" fill="#FFB74D"/>
+      <circle cx="91" cy="87" r="5" fill="#FFB74D"/>
+    </symbol>
+
+  </svg>
+
   <!-- noteお知らせバナー -->
   <div class="note-topbar">
     <div class="note-topbar-inner">
@@ -55,10 +170,11 @@
       </div>
     </div>
     <div class="hero-illustration">
-      <div class="mikan-big">🍊</div>
-      <div class="mikan-float mikan-1">🍊</div>
-      <div class="mikan-float mikan-2">🍊</div>
-      <div class="mikan-float mikan-3">🌿</div>
+      <div class="hero-bubble">みかんの知識、<br>毎日お届けします！</div>
+      <svg class="hero-chara-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <use href="#chara-papa"/>
+      </svg>
+      <p class="hero-chara-label">パパみかん</p>
     </div>
   </section>
 
@@ -86,6 +202,43 @@
       </div>
     </div>
   </section>
+
+  <!-- みかん一家のひとこと -->
+  <div class="family-strip">
+    <div class="family-strip-inner">
+      <p class="family-strip-label">🍊 みかん一家のひとこと</p>
+      <div class="family-strip-grid">
+        <div class="fs-card">
+          <svg class="fs-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-papa"/></svg>
+          <div class="fs-info">
+            <p class="fs-name">パパみかん</p>
+            <p class="fs-quote">「ビタミンと筋肉は裏切らない！」</p>
+          </div>
+        </div>
+        <div class="fs-card">
+          <svg class="fs-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-mama"/></svg>
+          <div class="fs-info">
+            <p class="fs-name">ママみかん</p>
+            <p class="fs-quote">「大丈夫、なんとかなるよ〜！」</p>
+          </div>
+        </div>
+        <div class="fs-card">
+          <svg class="fs-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-chibi"/></svg>
+          <div class="fs-info">
+            <p class="fs-name">チビみかん</p>
+            <p class="fs-quote">「ぼくもやる！トレーニングした！」</p>
+          </div>
+        </div>
+        <div class="fs-card">
+          <svg class="fs-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-puchi"/></svg>
+          <div class="fs-info">
+            <p class="fs-name">プチみかん</p>
+            <p class="fs-quote">「パパ、またやってるの？」</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- メインコンテンツ + サイドバー -->
   <main class="site-main">
@@ -450,6 +603,23 @@
           <p>選び方・保存・レシピが<br>1冊にまとまった本</p>
           <a href="https://amzn.to/4crx1kk" class="btn btn-orange" target="_blank" rel="noopener noreferrer sponsored">Amazonで詳細を見る</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- みかん一家 × note CTA -->
+  <section class="family-cta-section">
+    <div class="family-cta-inner">
+      <div class="family-cta-charas">
+        <svg class="fcta-svg fcta-mama" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-mama"/></svg>
+        <svg class="fcta-svg fcta-papa" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-papa"/></svg>
+        <svg class="fcta-svg fcta-chibi" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-chibi"/></svg>
+        <svg class="fcta-svg fcta-puchi" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><use href="#chara-puchi"/></svg>
+      </div>
+      <div class="family-cta-text">
+        <h2>みかん一家の日常、<br><span>noteで毎日更新中！</span></h2>
+        <p>「すぐ読めてすぐ使える」みかん雑学と<br>家族の笑えるエピソードを毎日お届けしています。</p>
+        <a href="https://note.com/ample_fowl2196/portal" class="btn btn-note" target="_blank" rel="noopener noreferrer">📝 noteをフォローする →</a>
       </div>
     </div>
   </section>
