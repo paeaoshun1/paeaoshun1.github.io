@@ -1,3 +1,37 @@
+/* ===== noteトップバー ===== */
+.note-topbar {
+  background: linear-gradient(90deg, #41C9B4 0%, #00B898 100%);
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 0.875rem;
+}
+
+.note-topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.note-topbar-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.note-topbar-text { flex: 1; line-height: 1.4; }
+
+.note-topbar-btn {
+  background: #fff;
+  color: #00B898;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: 14px;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+.note-topbar-btn:hover { opacity: 0.85; }
+
 /* ===== リセット・ベース ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -921,6 +955,79 @@ a.page:hover {
 }
 
 .copyright { color: #666 !important; }
+
+/* ===== noteナビリンク ===== */
+.nav-note-link {
+  background: #00B898 !important;
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 6px 14px !important;
+  font-weight: 700 !important;
+}
+.nav-note-link:hover {
+  background: #009d80 !important;
+  color: #fff !important;
+}
+
+/* ===== noteウィジェット ===== */
+.widget-note {
+  background: linear-gradient(135deg, #E8FAF7 0%, #D0F5EE 100%);
+  border: 1px solid #A8E6DD;
+}
+
+.note-widget-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.note-widget-avatar {
+  font-size: 2.4rem;
+  background: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,184,152,0.15);
+}
+
+.note-widget-info { flex: 1; }
+
+.note-widget-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #00796B;
+  margin-bottom: 4px;
+}
+.note-widget-name span {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.note-widget-desc {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.btn-note {
+  background: #00B898;
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  transition: background 0.2s;
+}
+.btn-note:hover { background: #009d80; color: #fff; }
 
 /* ===== レスポンシブ ===== */
 @media (max-width: 1024px) {
