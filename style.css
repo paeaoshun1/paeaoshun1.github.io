@@ -1200,7 +1200,8 @@ a.page:hover {
   width: 170px;
   height: auto;
   animation: float-big 4s ease-in-out infinite;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.15));
+  object-fit: contain;
 }
 .hero-chara-label {
   text-align: center;
@@ -1249,10 +1250,11 @@ a.page:hover {
   box-shadow: var(--shadow-hover);
 }
 .fs-svg {
-  width: 54px;
-  height: auto;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
 }
 .fs-info { flex: 1; min-width: 0; }
 .fs-name {
@@ -1290,8 +1292,9 @@ a.page:hover {
 }
 .fcta-svg {
   width: 90px;
-  height: auto;
+  height: 108px;
   margin-left: -18px;
+  object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
   transition: transform 0.35s ease;
 }
