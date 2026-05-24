@@ -8,8 +8,93 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ---- カテゴリフィルタータブ ---- */
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border: 2px solid #E07000;
+      background: #fff;
+      color: #E07000;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #E07000;
+      color: #fff;
+    }
+    .filter-count {
+      display: inline-block;
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 1px 6px;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(255,255,255,0.3);
+    }
+    /* ---- 動的ページネーション ---- */
+    #pagination {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .page-btn {
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .page-btn:hover {
+      background: #FFF3E0;
+      border-color: #E07000;
+      color: #E07000;
+    }
+    .page-btn.current {
+      background: #E07000;
+      color: #fff;
+      border-color: #E07000;
+      font-weight: 700;
+    }
+    .page-dots { padding: 8px 4px; color: #999; font-size: 14px; line-height: 1; }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4RGZXYJ0M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4RGZXYJ0M');
+  </script>
 </head>
 <body>
+
+  <!-- noteお知らせバナー -->
+  <div class="note-topbar">
+    <div class="note-topbar-inner">
+      <span class="note-topbar-icon">📝</span>
+      <span class="note-topbar-text"><strong>毎日note更新中！</strong>「すぐ読めてすぐ使える」みかん雑学を毎日投稿しています</span>
+      <a href="https://note.com/ample_fowl2196/portal" class="note-topbar-btn" target="_blank" rel="noopener noreferrer">noteを読む →</a>
+    </div>
+  </div>
 
   <!-- ヘッダー -->
   <header class="site-header">
@@ -27,6 +112,7 @@
           <li><a href="#ranking">人気記事</a></li>
           <li><a href="#about">パパについて</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="https://note.com/ample_fowl2196/portal" target="_blank" rel="noopener noreferrer" class="nav-note-link">📝 note</a></li>
         </ul>
       </nav>
       <button class="nav-toggle" aria-label="メニュー">☰</button>
@@ -36,7 +122,7 @@
   <!-- ヒーローバナー -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">毎日更新中 🍊</div>
+      <div class="hero-badge">毎日更新中</div>
       <h2 class="hero-title">みかんって、<br>こんなに<span>奥深い</span>。</h2>
       <p class="hero-sub">甘酸っぱい一粒の中に隠された、知られざる雑学を毎日お届け。<br>選び方・栄養・歴史・産地まで、パパが丁寧に解説します。</p>
       <div class="hero-cta">
@@ -45,10 +131,9 @@
       </div>
     </div>
     <div class="hero-illustration">
-      <div class="mikan-big">🍊</div>
-      <div class="mikan-float mikan-1">🍊</div>
-      <div class="mikan-float mikan-2">🍊</div>
-      <div class="mikan-float mikan-3">🌿</div>
+      <div class="hero-bubble">みかんの知識、<br>毎日お届けします！</div>
+      <img src="papa-mikan.png" class="hero-chara-svg" alt="パパみかん" />
+      <p class="hero-chara-label">パパみかん</p>
     </div>
   </section>
 
@@ -58,7 +143,7 @@
       <p class="ad-label">PR</p>
       <div class="ad-content">
         <div class="ad-product">
-          <span class="ad-emoji">📦</span>
+          <img src="https://image.rakuten.co.jp/kino-kishu/cabinet/mikan/imgrc0114648565.jpg" alt="産直みかん" style="width:64px;height:64px;object-fit:cover;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15);flex-shrink:0;">
           <div>
             <strong>パパ厳選！産地直送みかんセット</strong>
             <p>糖度12度以上保証・ご家庭用訳あり品も人気</p>
@@ -66,7 +151,7 @@
           <a href="https://a.r10.to/h5hYrg" class="btn btn-orange" target="_blank" rel="noopener noreferrer sponsored">楽天で見る →</a>
         </div>
         <div class="ad-product">
-          <span class="ad-emoji">🧴</span>
+          <img src="illustrations/vitamin%20supplement.png" alt="ビタミンCサプリ" style="width:64px;height:64px;object-fit:contain;border-radius:8px;flex-shrink:0;">
           <div>
             <strong>みかん精油サプリ・ビタミンC補給に</strong>
             <p>ヘスペリジン・フラボノイド配合</p>
@@ -77,6 +162,43 @@
     </div>
   </section>
 
+  <!-- みかん一家のひとこと -->
+  <div class="family-strip">
+    <div class="family-strip-inner">
+      <p class="family-strip-label">🍊 みかん一家のひとこと</p>
+      <div class="family-strip-grid">
+        <div class="fs-card">
+          <img src="papa-mikan.png" class="fs-svg" alt="パパみかん" />
+          <div class="fs-info">
+            <p class="fs-name">パパみかん</p>
+            <p class="fs-quote">「ビタミンと筋肉は裏切らない！」</p>
+          </div>
+        </div>
+        <div class="fs-card">
+          <img src="mama-mikan.png" class="fs-svg" alt="ママみかん" />
+          <div class="fs-info">
+            <p class="fs-name">ママみかん</p>
+            <p class="fs-quote">「大丈夫、なんとかなるよ〜！」</p>
+          </div>
+        </div>
+        <div class="fs-card">
+          <img src="chibi-mikan.png" class="fs-svg" alt="チビみかん" />
+          <div class="fs-info">
+            <p class="fs-name">チビみかん</p>
+            <p class="fs-quote">「ぼくもやる！トレーニングした！」</p>
+          </div>
+        </div>
+        <div class="fs-card">
+          <img src="puchi-mikan.png" class="fs-svg" alt="プチみかん" />
+          <div class="fs-info">
+            <p class="fs-name">プチみかん</p>
+            <p class="fs-quote">「パパ、またやってるの？」</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- メインコンテンツ + サイドバー -->
   <main class="site-main">
     <div class="content-wrapper">
@@ -84,8 +206,17 @@
       <!-- 記事一覧 -->
       <section id="articles" class="articles-section">
         <div class="section-header">
-          <h2 class="section-title">🍊 最新の雑学記事</h2>
+          <h2 class="section-title">最新の雑学記事</h2>
           <a href="#" class="see-all">すべて見る →</a>
+        </div>
+
+        <!-- カテゴリフィルタータブ -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">🍊 すべて <span class="filter-count" id="cnt-all">36</span></button>
+          <button class="filter-btn" data-filter="mikan">みかん <span class="filter-count" id="cnt-mikan">20</span></button>
+          <button class="filter-btn" data-filter="orange">オレンジ <span class="filter-count" id="cnt-orange">9</span></button>
+          <button class="filter-btn" data-filter="vitamin">ビタミン <span class="filter-count" id="cnt-vitamin">2</span></button>
+          <button class="filter-btn" data-filter="supple">サプリ <span class="filter-count" id="cnt-supple">5</span></button>
         </div>
 
         <div class="articles-grid">
@@ -93,7 +224,7 @@
           <!-- 記事カード 1 -->
           <article class="article-card featured">
             <div class="card-badge">今日の雑学</div>
-            <div class="card-image">🍊</div>
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
                 <span class="category cat-knowledge">豆知識</span>
@@ -107,7 +238,7 @@
 
           <!-- 記事カード 2 -->
           <article class="article-card">
-            <div class="card-image">🌿</div>
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
                 <span class="category cat-select">選び方</span>
@@ -121,7 +252,7 @@
 
           <!-- 記事カード 3 -->
           <article class="article-card">
-            <div class="card-image">📜</div>
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
                 <span class="category cat-history">歴史</span>
@@ -135,7 +266,7 @@
 
           <!-- 記事カード 4 -->
           <article class="article-card">
-            <div class="card-image">💊</div>
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
                 <span class="category cat-health">健康</span>
@@ -149,7 +280,7 @@
 
           <!-- 記事カード 5 -->
           <article class="article-card">
-            <div class="card-image">🗾</div>
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
                 <span class="category cat-region">産地</span>
@@ -163,7 +294,7 @@
 
           <!-- 記事カード 6 -->
           <article class="article-card">
-            <div class="card-image">🍰</div>
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
                 <span class="category cat-recipe">レシピ</span>
@@ -175,17 +306,420 @@
             </div>
           </article>
 
+          <!-- 記事カード 7 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-history">文化</span>
+                <time>2026年4月13日</time>
+              </div>
+              <h3 class="card-title">こたつとみかんはなぜ最強の組み合わせ？科学と文化で読み解く理由</h3>
+              <p class="card-excerpt">こたつにみかんはなぜこんなにも合うのか？ビタミンC補給・低カロリー・香りのリラックス効果など科学的な理由と日本独自の文化的な背景を解説。</p>
+              <a href="articles/article-007.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 8 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-select">保存</span>
+                <time>2026年4月12日</time>
+              </div>
+              <h3 class="card-title">みかんの正しい保存方法——常温・冷蔵・冷凍を使い分けて長持ちさせるコツ</h3>
+              <p class="card-excerpt">みかんを長持ちさせる正しい保存方法を解説。常温・冷蔵・冷凍それぞれの特徴と、箱みかんのカビを防ぐ「逆さ収納」など農家直伝のテクニックを紹介。</p>
+              <a href="articles/article-008.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 9 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">豆知識</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかんの食べ過ぎで手が黄色くなる理由と戻す方法【柑皮症とは】</h3>
+              <p class="card-excerpt">みかんを食べ過ぎると手が黄色くなる「柑皮症」。黄疸との違い・体への影響・自然に戻るまでの期間を分かりやすく解説。子どもの柑皮症についても。</p>
+              <a href="articles/article-009.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 10 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかんは1日何個食べていい？管理栄養士が教える適量と食べすぎのサイン</h3>
+              <p class="card-excerpt">みかんの1日の適量は大人で2〜3個が目安。カロリー・糖質・ビタミンCのバランスから年齢別の適量と、食べすぎたときのサインを詳しく解説。</p>
+              <a href="articles/article-010.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 11 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかんはダイエットの味方？カロリー・糖質・食べ方を徹底解説</h3>
+              <p class="card-excerpt">みかん1個は約45kcal。低カロリーでダイエット向きだが果糖には注意も必要。他の果物とのカロリー比較や、ダイエット中の正しい食べ方を解説。</p>
+              <a href="articles/article-011.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 12 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">育児</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">子どもにみかんはいつから？年齢別の与え方・量・注意点を解説</h3>
+              <p class="card-excerpt">みかんは離乳食後期（9〜11ヶ月）ごろから与えられます。月齢・年齢別の適量・アレルギー対策・子どもが喜ぶ食べ方の工夫まで詳しく紹介。</p>
+              <a href="articles/article-012.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 13 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかんで風邪は予防できる？ビタミンCと免疫力の科学的な関係を解説</h3>
+              <p class="card-excerpt">みかんのビタミンC・ヘスペリジン・β-クリプトキサンチンが免疫力に与える科学的な効果を解説。毎日2〜3個を習慣にする具体的な方法も紹介。</p>
+              <a href="articles/article-013.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 14 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">豆知識</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかん1個のビタミンC含有量は？レモンと徹底比較して分かった真実</h3>
+              <p class="card-excerpt">みかん1個のビタミンC含有量は約32mg。成人の1日推奨量100mgに対してみかん3個でほぼ充足。レモン・キウイ・パプリカとの比較表で解説。</p>
+              <a href="articles/article-014.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 15 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-select">選び方</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">ふるさと納税でみかんを頼むなら？人気産地のおすすめ返礼品5選【2026年版】</h3>
+              <p class="card-excerpt">ふるさと納税でみかんを選ぶなら愛媛・和歌山・静岡・熊本・長崎がおすすめ。楽天ふるさと納税でポイント最大化する方法も解説。</p>
+              <a href="articles/article-015.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 16 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかんのヘスペリジンとは？血流改善・冷え性・毛細血管への効果を科学的に解説</h3>
+              <p class="card-excerpt">みかんの白いスジに豊富なヘスペリジン（ビタミンP）の血流改善・冷え性・抗炎症効果を科学的に解説。毎日2〜3個で自然に摂取できる。</p>
+              <a href="articles/article-016.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 17 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-select">選び方</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">農家直送みかん通販おすすめ5選！楽天・産直サイトで失敗しない選び方</h3>
+              <p class="card-excerpt">農家直送みかんの通販サービス比較。楽天・ポケマル・食べチョク・ふるさと納税・JA直売所の特徴と産地別の選び方のコツを解説。</p>
+              <a href="articles/article-017.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 18 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月7日</time>
+              </div>
+              <h3 class="card-title">みかん由来サプリおすすめランキング5選！ヘスペリジン・ビタミンCを成分で選ぶ方法</h3>
+              <p class="card-excerpt">ヘスペリジン・β-クリプトキサンチン・ビタミンCを含むみかん由来サプリの選び方とランキング5選。毎日のみかんとの併用で効率よく摂取する方法も紹介。</p>
+              <a href="articles/article-018.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 19 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月8日</time>
+              </div>
+              <h3 class="card-title">みかんアレルギーの症状と対処法——口がかゆくなったら要注意？</h3>
+              <p class="card-excerpt">みかんで口がかゆくなるのはアレルギー？仮性アレルゲン反応・花粉症との交差反応・子どもへの対処法まで分かりやすく解説します。</p>
+              <a href="articles/article-019.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 20 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月8日</time>
+              </div>
+              <h3 class="card-title">みかんを食べると肌がきれいになる？美容効果と毎日の食べ方のポイント</h3>
+              <p class="card-excerpt">みかんのビタミンC・β-クリプトキサンチン・ヘスペリジンが肌に与える美容効果を解説。シミ・コラーゲン・抗酸化の3つの仕組みと毎日の食べ方のコツ。</p>
+              <a href="articles/article-020.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 21 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">豆知識</span>
+                <time>2026年5月8日</time>
+              </div>
+              <h3 class="card-title">オレンジとみかんの違いは？栄養・味・カロリーを徹底比較【どちらが体にいい？】</h3>
+              <p class="card-excerpt">オレンジとみかんの栄養・ビタミンC・カロリー・糖質・味の違いをHTML比較表で解説。目的別の使い分け方も紹介します。</p>
+              <a href="articles/article-021.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 22 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月8日</time>
+              </div>
+              <h3 class="card-title">ビタミンCの1日の摂取量と上限は？厚生労働省の推奨値をわかりやすく解説</h3>
+              <p class="card-excerpt">成人のビタミンC推奨摂取量は100mg、上限目安は2000mg。年齢・性別・妊婦別の一覧表と、みかん・食事・サプリで効率よく摂る方法を解説。</p>
+              <a href="articles/article-022.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 23 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">体験談</span>
+                <time>2026年5月8日</time>
+              </div>
+              <h3 class="card-title">ヘスペリジンサプリの効果は本当？1ヶ月飲み続けたパパの体験レポートと口コミ検証</h3>
+              <p class="card-excerpt">ヘスペリジンサプリを1ヶ月飲んだ正直な体験レポート。冷え性・血流・疲労感への変化と、Amazonの口コミ傾向・向いている人をまとめました。</p>
+              <a href="articles/article-023.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 24 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年5月9日</time>
+              </div>
+              <h3 class="card-title">オレンジのカロリー・糖質は？ダイエット中に食べていい量を解説</h3>
+              <p class="card-excerpt">オレンジ1個のカロリーと糖質をダイエット視点で解説。みかんとの比較や、ダイエット中の正しい食べ方・量の目安も紹介します。</p>
+              <a href="articles/article-024.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 25 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">豆知識</span>
+                <time>2026年5月9日</time>
+              </div>
+              <h3 class="card-title">オレンジ1個のビタミンC量は？みかん・レモンと比較してわかること</h3>
+              <p class="card-excerpt">オレンジのビタミンC含有量をみかん・レモン・キウイと比較。1日の推奨量を食事だけで摂る方法と、サプリとの使い分け方も解説。</p>
+              <a href="articles/article-025.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <!-- 記事カード 26 -->
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">豆知識</span>
+                <time>2026年5月9日</time>
+              </div>
+              <h3 class="card-title">輸入オレンジの農薬・防カビ剤は危険？知っておくべき安全の話</h3>
+              <p class="card-excerpt">輸入オレンジに使われる農薬・防カビ剤（OPP・TBZ・イマザリル）の実態と安全性を解説。皮を食べるときの注意点と国産との違いも紹介。</p>
+              <a href="articles/article-026.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-select">オレンジ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">市販オレンジジュースおすすめ比較！果汁100%の選び方ガイド</h3>
+              <p class="card-excerpt">市販の果汁100%オレンジジュースをメーカー別に徹底比較。成分・味・コスパで選ぶポイントと、スーパーで買えるおすすめ商品を子育てパパ目線で紹介します。</p>
+              <a href="articles/article-027.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">ビタミン</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">ビタミンCが多い食べ物ランキング20選！意外な野菜・果物も</h3>
+              <p class="card-excerpt">ビタミンCが多い食べ物ランキング20選を紹介。みかん・キウイ・ブロッコリーなど、意外な食材も含めて含有量データつきで徹底解説。毎日の食事で効率よく摂る方法も。</p>
+              <a href="articles/article-028.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">サプリ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">ビタミンCサプリの選び方——成分・量・コスパで比較するポイント</h3>
+              <p class="card-excerpt">ビタミンCサプリの選び方を成分・配合量・剤形・コスパの4つの観点で解説。天然vs合成、錠剤vsパウダーの違いも比較。子育て中の忙しいパパにも使いやすいサプリ選びをガイドします。</p>
+              <a href="articles/article-029.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">サプリ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">ビタミンCサプリの正しい飲み方——朝・夜・食後どのタイミングが最適？</h3>
+              <p class="card-excerpt">ビタミンCサプリの最適な飲み方・タイミングを解説。朝と夜どちらがいい？食前・食後は？分割摂取の効果は？子育てパパが実践している飲み方のコツも紹介します。</p>
+              <a href="articles/article-030.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">サプリ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">サプリは朝と夜どちらに飲む？種類別・目的別の最適タイミングまとめ</h3>
+              <p class="card-excerpt">サプリを朝に飲むべきか夜に飲むべきか、種類別・目的別に解説。ビタミンC・鉄・マグネシウム・プロテインなど主要サプリの最適なタイミングをまとめました。</p>
+              <a href="articles/article-031.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">オレンジ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">オレンジダイエットの効果は本当？正しい食べ方と注意点</h3>
+              <p class="card-excerpt">オレンジでダイエットできる？カロリー・食物繊維・クエン酸・ビタミンCの観点から効果を検証。食べるタイミングや量など、正しい食べ方と注意点を子育てパパが解説します。</p>
+              <a href="articles/article-032.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">オレンジ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">免疫力を上げるオレンジの食べ方——何個・いつ食べるのが正解？</h3>
+              <p class="card-excerpt">オレンジで免疫力を上げる正しい食べ方を解説。ビタミンC・フラボノイド・β-クリプトキサンチンの免疫作用から、1日に何個食べるべきか、いつ食べると効果的かまで丁寧に説明します。</p>
+              <a href="articles/article-033.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-knowledge">オレンジ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">子どもにオレンジはいつから？年齢別の与え方と注意点</h3>
+              <p class="card-excerpt">子どもにオレンジを与えるのはいつから？離乳食期から幼児期まで年齢別の与え方、アレルギー対策、注意すべきポイントを子育てパパが丁寧に解説します。</p>
+              <a href="articles/article-034.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-select">オレンジ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">産直オレンジ通販おすすめ5選！美味しい食べ比べセットの選び方</h3>
+              <p class="card-excerpt">産直オレンジの通販おすすめを厳選紹介。美味しい食べ比べセットの選び方、品種・産地・価格帯での比較も解説。楽天・Amazon・ふるさと納税での賢い購入方法もご紹介。</p>
+              <a href="articles/article-035.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">サプリ</span>
+                <time>2026年5月10日</time>
+              </div>
+              <h3 class="card-title">オレンジ由来サプリおすすめランキング——フラボノイド・ビタミンCを補う</h3>
+              <p class="card-excerpt">オレンジ・みかん由来のサプリおすすめランキングを紹介。ヘスペリジン・ビタミンC・β-クリプトキサンチンなどフラボノイド系サプリの選び方と効果を比較解説します。</p>
+              <a href="articles/article-036.html" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
         </div>
 
-        <!-- ページネーション -->
-        <div class="pagination">
-          <span class="page current">1</span>
-          <a href="#" class="page">2</a>
-          <a href="#" class="page">3</a>
-          <span class="page-dots">…</span>
-          <a href="#" class="page">12</a>
-          <a href="#" class="page-next">次へ →</a>
-        </div>
+        <!-- ページネーション（JSで動的生成） -->
+        <div id="pagination"></div>
       </section>
 
       <!-- サイドバー -->
@@ -204,7 +738,9 @@
         <div class="widget widget-ad">
           <p class="ad-label">PR</p>
           <div class="sidebar-ad">
-            <div class="sidebar-ad-emoji">📦</div>
+            <a href="https://a.r10.to/h5hYrg" target="_blank" rel="noopener noreferrer sponsored" style="display:block;text-align:center;margin-bottom:8px;">
+              <img src="https://image.rakuten.co.jp/kino-kishu/cabinet/mikan/imgrc0114648565.jpg" alt="産直みかん" style="max-width:130px;width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.12);">
+            </a>
             <h4>パパおすすめ！<br>訳あり産直みかん</h4>
             <p>甘さ保証・送料無料<br>10kg 3,980円〜</p>
             <a href="https://a.r10.to/h5hYrg" class="btn btn-orange full" target="_blank" rel="noopener noreferrer sponsored">楽天でチェック →</a>
@@ -216,38 +752,41 @@
           <h3 class="widget-title">🏆 人気記事ランキング</h3>
           <ol class="ranking-list">
             <li>
-              <a href="#">みかんの白いスジは食べるべき？栄養の真実</a>
+              <a href="articles/article-001.html">みかんの白いスジは食べるべき？栄養の真実</a>
               <span class="view-count">👁 12,840</span>
             </li>
             <li>
-              <a href="#">みかんを食べ過ぎると手が黄色くなる理由</a>
+              <a href="articles/article-009.html">みかんを食べ過ぎると手が黄色くなる理由</a>
               <span class="view-count">👁 9,210</span>
             </li>
             <li>
-              <a href="#">甘いみかんの見分け方5選【農家直伝】</a>
+              <a href="articles/article-028.html">ビタミンCが多い食べ物ランキング20選</a>
+              <span class="view-count">👁 8,950</span>
+            </li>
+            <li>
+              <a href="articles/article-002.html">甘いみかんの見分け方5選【農家直伝】</a>
               <span class="view-count">👁 8,640</span>
             </li>
             <li>
-              <a href="#">温州みかんの「温州」はなぜ中国地名？</a>
-              <span class="view-count">👁 7,330</span>
+              <a href="articles/article-029.html">ビタミンCサプリの正しい選び方</a>
+              <span class="view-count">👁 7,830</span>
             </li>
             <li>
-              <a href="#">みかんの皮で作る陳皮レシピ完全版</a>
-              <span class="view-count">👁 6,120</span>
+              <a href="articles/article-011.html">みかんはダイエットの味方？カロリー徹底解説</a>
+              <span class="view-count">👁 7,330</span>
             </li>
           </ol>
         </div>
 
-        <!-- カテゴリー -->
+        <!-- カテゴリー（フィルターと連動） -->
         <div class="widget">
           <h3 class="widget-title">📂 カテゴリー</h3>
           <ul class="category-list">
-            <li><a href="#"><span class="cat-dot cat-knowledge"></span>豆知識 <span class="count">48</span></a></li>
-            <li><a href="#"><span class="cat-dot cat-select"></span>選び方 <span class="count">23</span></a></li>
-            <li><a href="#"><span class="cat-dot cat-health"></span>健康・栄養 <span class="count">31</span></a></li>
-            <li><a href="#"><span class="cat-dot cat-history"></span>歴史・文化 <span class="count">19</span></a></li>
-            <li><a href="#"><span class="cat-dot cat-region"></span>産地・品種 <span class="count">27</span></a></li>
-            <li><a href="#"><span class="cat-dot cat-recipe"></span>レシピ活用 <span class="count">15</span></a></li>
+            <li><a href="#articles" class="filter-link" data-filter="mikan"><span class="cat-dot cat-knowledge"></span>みかん <span class="count">20</span></a></li>
+            <li><a href="#articles" class="filter-link" data-filter="orange"><span class="cat-dot cat-region"></span>オレンジ <span class="count">9</span></a></li>
+            <li><a href="#articles" class="filter-link" data-filter="vitamin"><span class="cat-dot cat-health"></span>ビタミン・栄養 <span class="count">2</span></a></li>
+            <li><a href="#articles" class="filter-link" data-filter="supple"><span class="cat-dot cat-select"></span>サプリ <span class="count">5</span></a></li>
+            <li><a href="#articles" class="filter-link" data-filter="all"><span class="cat-dot cat-history"></span>すべての記事 <span class="count">36</span></a></li>
           </ul>
         </div>
 
@@ -255,7 +794,9 @@
         <div class="widget widget-ad">
           <p class="ad-label">PR</p>
           <div class="sidebar-ad sidebar-ad-alt">
-            <div class="sidebar-ad-emoji">📚</div>
+            <a href="https://amzn.to/4crx1kk" target="_blank" rel="noopener noreferrer sponsored" style="display:block;text-align:center;margin-bottom:8px;">
+              <img src="illustrations/mikan-book.png" alt="みかんの本" style="max-width:130px;width:100%;border-radius:8px;">
+            </a>
             <h4>みかん農家に学ぶ<br>柑橘の教科書</h4>
             <p>産地・品種・栽培まで<br>完全解説の一冊</p>
             <a href="https://amzn.to/4crx1kk" class="btn btn-green full" target="_blank" rel="noopener noreferrer sponsored">Amazonで見る →</a>
@@ -266,13 +807,26 @@
         <div class="widget" id="about">
           <h3 class="widget-title">👨 パパについて</h3>
           <div class="profile-card">
-            <div class="profile-avatar">🍊</div>
+            <div class="profile-avatar"><img src="papa-mikan.png" alt="パパみかん"></div>
             <div class="profile-info">
               <h4>パパみかん</h4>
               <p>みかんをこよなく愛する2児のパパ。毎年みかん産地を家族で旅行し、農家さんから直接話を聞くのが趣味。「みかんは日本の宝」をモットーに毎日雑学を発信中。</p>
             </div>
           </div>
           <a href="#" class="btn btn-outline full" style="margin-top:12px">詳しいプロフィール →</a>
+        </div>
+
+        <!-- noteウィジェット -->
+        <div class="widget widget-note">
+          <h3 class="widget-title">📝 毎日note更新中</h3>
+          <div class="note-widget-body">
+            <div class="note-widget-avatar">🍊</div>
+            <div class="note-widget-info">
+              <p class="note-widget-name">パパみかん<span>@フォロバ100</span></p>
+              <p class="note-widget-desc">「すぐ読めてすぐ使える」みかん雑学を毎日投稿中！育児・筋トレ・栄養テーマも発信しています。</p>
+            </div>
+          </div>
+          <a href="https://note.com/ample_fowl2196/portal" class="btn btn-note full" target="_blank" rel="noopener noreferrer">noteをフォローする →</a>
         </div>
 
         <!-- メルマガ登録 -->
@@ -287,34 +841,118 @@
     </div>
   </main>
 
+  <!-- みかん一家キャラクター紹介 -->
+  <section class="chara-section">
+    <div class="chara-inner">
+      <div class="section-header" style="justify-content:center; flex-direction:column; text-align:center; gap:8px; margin-bottom:8px;">
+        <h2 class="section-title">みかん一家を紹介します</h2>
+        <p class="chara-subtitle">パパみかんのnoteに登場する家族キャラクターたちです。<a href="https://note.com/ample_fowl2196/portal" target="_blank" rel="noopener noreferrer">noteでも毎日活躍中！</a></p>
+      </div>
+      <div class="chara-grid">
+
+        <!-- パパみかん -->
+        <div class="chara-card">
+          <div class="chara-img-wrap">
+            <img src="https://assets.st-note.com/production/uploads/images/240950596/rectangle_large_type_2_c1ffe60925ff58613492dc799dfe1bb2.png?width=1280" alt="パパみかん" class="chara-img" />
+          </div>
+          <div class="chara-body">
+            <div class="chara-role">パパ / 著者</div>
+            <h3 class="chara-name">パパみかん</h3>
+            <p class="chara-desc">2児のパパ。筋トレ・みかん補給・スキマ時間の勉強が趣味。難しい言葉を使わない主義の「意識高い系みかん」を目指し中。</p>
+            <div class="chara-quote">
+              <span class="chara-quote-icon">💬</span>
+              「ビタミンと筋肉は裏切らない！」
+            </div>
+            <a href="https://note.com/ample_fowl2196/n/n645279d08a20" class="chara-link" target="_blank" rel="noopener noreferrer">noteで詳しく見る →</a>
+          </div>
+        </div>
+
+        <!-- ママみかん -->
+        <div class="chara-card">
+          <div class="chara-img-wrap">
+            <img src="https://assets.st-note.com/production/uploads/images/262673520/rectangle_large_type_2_d391f122e037e57e3fb247fcd08d5af7.png?width=1280" alt="ママみかん" class="chara-img" />
+          </div>
+          <div class="chara-body">
+            <div class="chara-role">ママ / 家族の太陽</div>
+            <h3 class="chara-name">ママみかん</h3>
+            <p class="chara-desc">いつもニコニコ、優しくて明るい、ちょっと天然。どんなカオスな状況でもにこにこ対応できる「母パワー」の持ち主。</p>
+            <div class="chara-quote">
+              <span class="chara-quote-icon">💬</span>
+              「大丈夫、大丈夫〜！なんとかなるよ〜！」
+            </div>
+            <a href="https://note.com/ample_fowl2196/n/n1f108284719e" class="chara-link" target="_blank" rel="noopener noreferrer">noteで詳しく見る →</a>
+          </div>
+        </div>
+
+        <!-- チビみかん -->
+        <div class="chara-card">
+          <div class="chara-img-wrap">
+            <img src="https://assets.st-note.com/production/uploads/images/262673727/rectangle_large_type_2_b89e4785f861fb88c846c29edf370858.png?width=1280" alt="チビみかん" class="chara-img" />
+          </div>
+          <div class="chara-body">
+            <div class="chara-role">長男（4歳）/ エネルギー担当</div>
+            <h3 class="chara-name">チビみかん</h3>
+            <p class="chara-desc">とにかく動く、止まることを知らない元気いっぱいの男の子。パパの筋トレに参加するが腕立て1回で満足して倒れる。</p>
+            <div class="chara-quote">
+              <span class="chara-quote-icon">💬</span>
+              「ぼくもやる！きょうはトレーニングした！」
+            </div>
+            <a href="https://note.com/ample_fowl2196/n/n4a52be913d36" class="chara-link" target="_blank" rel="noopener noreferrer">noteで詳しく見る →</a>
+          </div>
+        </div>
+
+        <!-- プチみかん -->
+        <div class="chara-card">
+          <div class="chara-img-wrap">
+            <img src="https://assets.st-note.com/production/uploads/images/262674331/rectangle_large_type_2_27be27b8fc2986eafb97d7f0efc009ce.png?width=1280" alt="プチみかん" class="chara-img" />
+          </div>
+          <div class="chara-body">
+            <div class="chara-role">長女（2歳）/ 冷静ツッコミ担当</div>
+            <h3 class="chara-name">プチみかん</h3>
+            <p class="chara-desc">2歳なのに家族の中で一番しっかりしている。冷静で観察力が高く、鋭いツッコミを放つ。甘えん坊な一面もある。</p>
+            <div class="chara-quote">
+              <span class="chara-quote-icon">💬</span>
+              「パパ、またやってるの？でもお腹もちょっとあるね」
+            </div>
+            <a href="https://note.com/ample_fowl2196/n/n71980c1a7954" class="chara-link" target="_blank" rel="noopener noreferrer">noteで詳しく見る →</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="chara-footer">
+        <a href="https://note.com/ample_fowl2196/portal" class="btn btn-note" target="_blank" rel="noopener noreferrer">📝 みかん一家の日常をnoteで読む →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- 特集セクション -->
   <section class="feature-section">
     <div class="feature-inner">
-      <h2 class="section-title">📖 パパみかん特集</h2>
+      <h2 class="section-title">パパみかん特集</h2>
       <div class="feature-grid">
         <div class="feature-card">
           <div class="feature-icon">🏅</div>
           <h3>品種完全ガイド</h3>
           <p>温州・伊予柑・はるみ・せとか…国内主要品種30種を徹底解説</p>
-          <a href="#" class="feature-link">読む →</a>
+          <a href="articles/article-037" class="feature-link">読む →</a>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🌡️</div>
+          <div class="feature-icon"><img src="mama-mikan.png" alt="" class="feature-illust"></div>
           <h3>保存・鮮度キープ術</h3>
           <p>常温？冷蔵？正しい保存でみかんをおいしく長持ちさせるコツ</p>
-          <a href="#" class="feature-link">読む →</a>
+          <a href="articles/article-008" class="feature-link">読む →</a>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🧪</div>
+          <div class="feature-icon"><img src="puchi-mikan.png" alt="" class="feature-illust"></div>
           <h3>みかん栄養学</h3>
           <p>ビタミンC・ヘスペリジン・β-クリプトキサンチン…体への効果をまとめて解説</p>
-          <a href="#" class="feature-link">読む →</a>
+          <a href="articles/article-004" class="feature-link">読む →</a>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🗺️</div>
+          <div class="feature-icon"><img src="papa-mikan.png" alt="" class="feature-illust"></div>
           <h3>産地めぐりレポート</h3>
           <p>愛媛・和歌山・熊本…パパが実際に訪れた産地の現地レポート</p>
-          <a href="#" class="feature-link">読む →</a>
+          <a href="articles/article-005" class="feature-link">読む →</a>
         </div>
       </div>
     </div>
@@ -326,23 +964,46 @@
       <p class="ad-label">PR・パパが実際に使っているもの</p>
       <div class="ad-content ad-content-3">
         <div class="ad-product-v">
-          <span class="ad-emoji-big">🍊</span>
+          <a href="https://a.r10.to/h5hYrg" target="_blank" rel="noopener noreferrer sponsored">
+            <img src="https://image.rakuten.co.jp/kino-kishu/cabinet/mikan/imgrc0114648565.jpg" alt="産直みかん" style="width:100px;height:100px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:block;margin:0 auto 4px;">
+          </a>
           <strong>産直みかん定期便</strong>
           <p>旬の時期に農家から直送<br>月1〜2回お届け</p>
           <a href="https://a.r10.to/h5hYrg" class="btn btn-orange" target="_blank" rel="noopener noreferrer sponsored">楽天で詳細を見る</a>
         </div>
         <div class="ad-product-v">
-          <span class="ad-emoji-big">🧴</span>
+          <a href="https://amzn.to/3QqZyxE" target="_blank" rel="noopener noreferrer sponsored">
+            <img src="illustrations/vitamin%20supplement.png" alt="ビタミンCサプリ" style="width:100px;height:100px;object-fit:contain;border-radius:10px;display:block;margin:0 auto 4px;">
+          </a>
           <strong>ビタミンC＋ヘスペリジン</strong>
           <p>みかんから抽出した<br>天然由来サプリ</p>
           <a href="https://amzn.to/3QqZyxE" class="btn btn-orange" target="_blank" rel="noopener noreferrer sponsored">Amazonで詳細を見る</a>
         </div>
         <div class="ad-product-v">
-          <span class="ad-emoji-big">📚</span>
+          <a href="https://amzn.to/4crx1kk" target="_blank" rel="noopener noreferrer sponsored">
+            <img src="illustrations/mikan-book.png" alt="みかんの本" style="width:100px;height:100px;object-fit:contain;border-radius:10px;display:block;margin:0 auto 4px;">
+          </a>
           <strong>柑橘農家の知恵袋</strong>
           <p>選び方・保存・レシピが<br>1冊にまとまった本</p>
           <a href="https://amzn.to/4crx1kk" class="btn btn-orange" target="_blank" rel="noopener noreferrer sponsored">Amazonで詳細を見る</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- みかん一家 × note CTA -->
+  <section class="family-cta-section">
+    <div class="family-cta-inner">
+      <div class="family-cta-charas">
+        <img src="mama-mikan.png"  class="fcta-svg fcta-mama"  alt="ママみかん" />
+        <img src="papa-mikan.png"  class="fcta-svg fcta-papa"  alt="パパみかん" />
+        <img src="chibi-mikan.png" class="fcta-svg fcta-chibi" alt="チビみかん" />
+        <img src="puchi-mikan.png" class="fcta-svg fcta-puchi" alt="プチみかん" />
+      </div>
+      <div class="family-cta-text">
+        <h2>みかん一家の日常、<br><span>noteで毎日更新中！</span></h2>
+        <p>「すぐ読めてすぐ使える」みかん雑学と<br>家族の笑えるエピソードを毎日お届けしています。</p>
+        <a href="https://note.com/ample_fowl2196/portal" class="btn btn-note" target="_blank" rel="noopener noreferrer">📝 noteをフォローする →</a>
       </div>
     </div>
   </section>
@@ -377,7 +1038,7 @@
           <ul>
             <li><a href="#">X（旧Twitter）</a></li>
             <li><a href="#">Instagram</a></li>
-            <li><a href="#">note</a></li>
+            <li><a href="https://note.com/ample_fowl2196/portal" target="_blank" rel="noopener noreferrer">📝 note（毎日更新）</a></li>
             <li><a href="#">メルマガ登録</a></li>
           </ul>
         </div>
