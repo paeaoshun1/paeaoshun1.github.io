@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ | パパみかん</title>
+  <meta name="description" content="パパみかん（papamikan.com）へのお問い合わせフォームです。記事のご感想・ご質問・掲載に関するご連絡などはこちらからお送りください。" />
+  <link rel="canonical" href="https://papamikan.com/contact" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article.css" />
+  <style>
+    .contact-form { margin-top: 24px; }
+    .contact-form .field { margin-bottom: 20px; }
+    .contact-form label { display: block; font-weight: 700; margin-bottom: 6px; color: #444; }
+    .contact-form label .req { color: #d24; font-size: 0.85em; margin-left: 6px; }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 100%; padding: 12px 14px; border: 2px solid #e5e5e5; border-radius: 8px;
+      font-family: inherit; font-size: 1rem; box-sizing: border-box; background: #fff;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--orange);
+    }
+    .contact-form textarea { min-height: 160px; resize: vertical; }
+    .contact-form .submit-btn {
+      background: var(--orange); color: #fff; border: none; border-radius: 8px;
+      padding: 14px 32px; font-size: 1.05rem; font-weight: 700; font-family: inherit;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .contact-form .submit-btn:hover { opacity: 0.88; }
+    .contact-note { background: var(--orange-pale); border: 2px solid var(--orange-light); border-radius: 12px; padding: 16px 20px; font-size: 0.92rem; color: #555; }
+    .contact-note a { color: var(--orange); }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4RGZXYJ0M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4RGZXYJ0M');
+  </script>
+</head>
+<body>
+
+  <div class="note-topbar">
+    <div class="note-topbar-inner">
+      <span class="note-topbar-icon">📝</span>
+      <span class="note-topbar-text"><strong>毎日note更新中！</strong>「すぐ読めてすぐ使える」みかん雑学を毎日投稿しています</span>
+      <a href="https://note.com/ample_fowl2196/portal" class="note-topbar-btn" target="_blank" rel="noopener noreferrer">noteを読む →</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <span class="logo-icon">🍊</span>
+        <div class="logo-text"><h1><a href="/" style="color:inherit">パパみかん</a></h1><p>毎日届く・みかん雑学</p></div>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/#articles">記事一覧</a></li>
+          <li><a href="/#ranking">人気記事</a></li>
+          <li><a href="/#about">パパについて</a></li>
+          <li><a href="https://note.com/ample_fowl2196/portal" target="_blank" rel="noopener noreferrer" class="nav-note-link">📝 note</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/">トップ</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>お問い合わせ</span>
+    </div>
+  </div>
+
+  <main style="max-width:720px; margin:0 auto; padding:40px 24px;">
+    <div class="article-content">
+      <h2 style="margin-top:0;">お問い合わせ</h2>
+      <p>当サイト「パパみかん」へのご感想・ご質問・記事内容に関するご指摘・掲載やお仕事のご相談などは、下記フォームよりお送りください。内容を確認のうえ、必要に応じてご返信いたします。</p>
+
+      <div class="contact-note">
+        <p style="margin:0;">📌 <strong>ご返信について</strong>：内容によってはご返信までお時間をいただく場合や、ご返信できない場合があります。健康・医療に関する個別のご相談には回答できません。詳しくは<a href="/disclaimer">免責事項</a>をご確認ください。</p>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/dan.yuka.0409@gmail.com" method="POST">
+        <!-- FormSubmit 設定 -->
+        <input type="hidden" name="_subject" value="【パパみかん】お問い合わせがありました">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://papamikan.com/thanks">
+        <!-- スパム対策ハニーポット（人間には非表示） -->
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="field">
+          <label for="name">お名前・ニックネーム<span class="req">必須</span></label>
+          <input type="text" id="name" name="お名前" required>
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="subject">件名</label>
+          <input type="text" id="subject" name="件名">
+        </div>
+        <div class="field">
+          <label for="message">お問い合わせ内容<span class="req">必須</span></label>
+          <textarea id="message" name="お問い合わせ内容" required></textarea>
+        </div>
+        <div class="field">
+          <button type="submit" class="submit-btn">送信する</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><span class="logo-icon">🍊</span> パパみかん</div>
+      <nav class="footer-nav">
+        <a href="/">トップ</a>
+        <a href="/#articles">記事一覧</a>
+        <a href="/contact">お問い合わせ</a>
+        <a href="/policy">プライバシーポリシー</a>
+        <a href="/disclaimer">免責事項</a>
+      </nav>
+      <p class="footer-copy">© 2026 パパみかん. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
