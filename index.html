@@ -88,6 +88,34 @@
     }
     .page-dots { padding: 8px 4px; color: #999; font-size: 14px; line-height: 1; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://papamikan.com/#organization",
+        "name": "パパみかん",
+        "url": "https://papamikan.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://papamikan.com/illustrations/papa-mikan.png"
+        },
+        "sameAs": [
+          "https://note.com/ample_fowl2196/portal"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://papamikan.com/#website",
+        "name": "パパみかん",
+        "url": "https://papamikan.com/",
+        "publisher": { "@id": "https://papamikan.com/#organization" },
+        "inLanguage": "ja"
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4RGZXYJ0M"></script>
   <script>
