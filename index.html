@@ -21,42 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ---- カテゴリフィルタータブ ---- */
-    .filter-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 8px 18px;
-      border: 2px solid #E07000;
-      background: #fff;
-      color: #E07000;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: inherit;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: #E07000;
-      color: #fff;
-    }
-    .filter-count {
-      display: inline-block;
-      background: rgba(255,255,255,0.3);
-      border-radius: 10px;
-      padding: 1px 6px;
-      font-size: 12px;
-      margin-left: 4px;
-    }
-    .filter-btn.active .filter-count {
-      background: rgba(255,255,255,0.3);
-    }
-    /* ---- 動的ページネーション ---- */
+        /* ---- 動的ページネーション ---- */
     #pagination {
       display: flex;
       gap: 6px;
@@ -296,58 +261,6 @@
             </div>
           </article>
 
-          <article class="article-card" data-cat="mikan">
-            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-orange">みかん</span>
-                <time>2026年6月14日</time>
-              </div>
-              <h3 class="card-title">みかんは冷凍できる！丸ごと冷凍の方法とアレンジレシピ</h3>
-              <p class="card-excerpt">みかんは皮ごと丸ごと冷凍で約2〜3ヶ月保存可能。皮ごと・むき身・カット別の冷凍手順と、半解凍で楽しむアレンジレシピを紹介します。</p>
-              <a href="articles/article-095" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-cat="orange">
-            <div class="card-image"><img src="illustrations/mikan3.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-orange">オレンジ</span>
-                <time>2026年6月13日</time>
-              </div>
-              <h3 class="card-title">オレンジで肌がきれいになる？ビタミンCとポリフェノールの美容効果</h3>
-              <p class="card-excerpt">オレンジのビタミンCとポリフェノール（ヘスペリジン）が肌にうれしい理由と、美容効果を引き出す食べ方のポイントを解説します。</p>
-              <a href="articles/article-090" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-cat="vitamin">
-            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-vitamin">ビタミン</span>
-                <time>2026年6月7日</time>
-              </div>
-              <h3 class="card-title">ビタミンB群が不足すると疲れやすい？エネルギー代謝との関係</h3>
-              <p class="card-excerpt">ビタミンB1・B2・B6・B12・葉酸などB群8種の役割と、不足すると疲れやすくなる理由、多く含む食べ物をまとめました。</p>
-              <a href="articles/article-085" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <article class="article-card" data-cat="vitamin">
-            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-vitamin">ビタミン</span>
-                <time>2026年6月4日</time>
-              </div>
-              <h3 class="card-title">水溶性ビタミンと脂溶性ビタミンの違い——摂り方・溜まり方を解説</h3>
-              <p class="card-excerpt">水溶性（ビタミンC・B群）と脂溶性（A・D・E・K）の違いを、摂り方・体への溜まり方・過剰摂取リスクの観点で整理します。</p>
-              <a href="articles/article-080" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
           <article class="article-card" data-cat="orange">
             <div class="card-image"><img src="illustrations/mikan3.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -407,6 +320,19 @@
                 <span class="category cat-orange">みかん</span>
                 <time>2026年6月14日</time>
               </div>
+              <h3 class="card-title">みかんは冷凍できる！丸ごと冷凍の方法とアレンジレシピ</h3>
+              <p class="card-excerpt">みかんは皮ごと丸ごと冷凍で約2〜3ヶ月保存可能。皮ごと・むき身・カット別の冷凍手順と、半解凍で楽しむアレンジレシピを紹介します。</p>
+              <a href="articles/article-095" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="mikan">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-orange">みかん</span>
+                <time>2026年6月14日</time>
+              </div>
               <h3 class="card-title">みかんの皮をお風呂に入れると何が起きる？陳皮風呂の作り方と効果</h3>
               <p class="card-excerpt">食べた後のみかんの皮を乾燥させてお風呂へ。リモネン・ヘスペリジン・ペクチンの働きで血行促進・保湿・リラックス効果が期待できる陳皮風呂の作り方と注意点を解説。</p>
               <a href="articles/article-094" class="read-more">続きを読む →</a>
@@ -449,6 +375,19 @@
               <h3 class="card-title">加熱するとビタミンCは壊れる？調理法ごとの損失量と対策</h3>
               <p class="card-excerpt">ビタミンCの損失は「熱分解」と「水への溶出」の2種類。茹でる・炒める・蒸す・電子レンジ別の損失率を比較表で解説。調理の工夫で損失を減らす5つのコツも紹介。</p>
               <a href="articles/article-091" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="orange">
+            <div class="card-image"><img src="illustrations/mikan3.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-orange">オレンジ</span>
+                <time>2026年6月13日</time>
+              </div>
+              <h3 class="card-title">オレンジで肌がきれいになる？ビタミンCとポリフェノールの美容効果</h3>
+              <p class="card-excerpt">オレンジのビタミンCとポリフェノール（ヘスペリジン）が肌にうれしい理由と、美容効果を引き出す食べ方のポイントを解説します。</p>
+              <a href="articles/article-090" class="read-more">続きを読む →</a>
             </div>
           </article>
 
@@ -511,6 +450,19 @@
                 <span class="category cat-vitamin">ビタミン</span>
                 <time>2026年6月7日</time>
               </div>
+              <h3 class="card-title">ビタミンB群が不足すると疲れやすい？エネルギー代謝との関係</h3>
+              <p class="card-excerpt">ビタミンB1・B2・B6・B12・葉酸などB群8種の役割と、不足すると疲れやすくなる理由、多く含む食べ物をまとめました。</p>
+              <a href="articles/article-085" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="vitamin">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-vitamin">ビタミン</span>
+                <time>2026年6月7日</time>
+              </div>
               <h3 class="card-title">ビタミンCサプリを飲む最適なタイミングは？目的別（美容・免疫・疲労）に解説</h3>
               <p class="card-excerpt">美容なら夜・免疫なら朝・疲労回復なら運動後。ビタミンCサプリの効果的な飲む時間帯を目的別に比較表で解説します。</p>
               <a href="articles/article-081" class="read-more">続きを読む →</a>
@@ -553,6 +505,19 @@
               <h3 class="card-title">オレンジのポリフェノールとは？ヘスペリジン・ナリンギンの種類と健康効果を解説</h3>
               <p class="card-excerpt">オレンジに含まれる4種のポリフェノール（ヘスペリジン・ナリンギン・ノビレチン・リモネン）の特徴と効果を比較表で解説。果肉と皮の含有量の違いも紹介。</p>
               <a href="articles/article-084" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card" data-cat="vitamin">
+            <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-vitamin">ビタミン</span>
+                <time>2026年6月4日</time>
+              </div>
+              <h3 class="card-title">水溶性ビタミンと脂溶性ビタミンの違い——摂り方・溜まり方を解説</h3>
+              <p class="card-excerpt">水溶性（ビタミンC・B群）と脂溶性（A・D・E・K）の違いを、摂り方・体への溜まり方・過剰摂取リスクの観点で整理します。</p>
+              <a href="articles/article-080" class="read-more">続きを読む →</a>
             </div>
           </article>
 
@@ -1102,7 +1067,20 @@
             </div>
           </article>
 
-          <article class="article-card">
+                    <article class="article-card" data-cat="mikan">
+            <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-orange">みかん</span>
+                <time>2026年5月20日</time>
+              </div>
+              <h3 class="card-title">みかん・柑橘の品種完全ガイド30選——温州・せとか・デコポンまで徹底解説</h3>
+              <p class="card-excerpt">国内で流通する柑橘品種30種を早生・中生・晩生・タンゴール・雑柑に分類して解説。旬の時期・産地・糖度・味の特徴までわかりやすくまとめました。</p>
+              <a href="articles/article-037" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+<article class="article-card">
             <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
@@ -1232,7 +1210,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 26 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1246,7 +1223,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 25 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1260,7 +1236,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 24 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1274,7 +1249,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 23 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1288,7 +1262,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 22 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/vitamin%20supplement.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1302,7 +1275,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 21 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan2.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1316,7 +1288,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 20 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1330,7 +1301,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 19 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1344,7 +1314,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 18 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1358,7 +1327,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 17 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1372,7 +1340,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 16 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1386,7 +1353,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 15 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1400,7 +1366,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 14 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1414,7 +1379,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 13 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1428,7 +1392,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 12 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1442,7 +1405,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 11 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1456,7 +1418,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 10 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1470,7 +1431,6 @@
             </div>
           </article>
 
-          <!-- 記事カード 9 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1484,91 +1444,19 @@
             </div>
           </article>
 
-          <!-- 記事カード 8 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
-                <span class="category cat-select">保存</span>
-                <time>2026年4月12日</time>
+                <span class="category cat-knowledge">豆知識</span>
+                <time>2026年4月19日</time>
               </div>
-              <h3 class="card-title">みかんの正しい保存方法——常温・冷蔵・冷凍を使い分けて長持ちさせるコツ</h3>
-              <p class="card-excerpt">みかんを長持ちさせる正しい保存方法を解説。常温・冷蔵・冷凍それぞれの特徴と、箱みかんのカビを防ぐ「逆さ収納」など農家直伝のテクニックを紹介。</p>
-              <a href="articles/article-008" class="read-more">続きを読む →</a>
+              <h3 class="card-title">みかんの「白いスジ」は食べた方がいい？実は体にうれしい成分の塊だった</h3>
+              <p class="card-excerpt">みかんを食べるとき、白いスジ（アルベド）を取り除いている人も多いのでは？実はこのスジ、栄養の宝庫なんです。ヘスペリジンやペクチンが豊富で…</p>
+              <a href="articles/article-001" class="read-more">続きを読む →</a>
             </div>
           </article>
 
-          <!-- 記事カード 7 -->
-          <article class="article-card">
-            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-history">文化</span>
-                <time>2026年4月13日</time>
-              </div>
-              <h3 class="card-title">こたつとみかんはなぜ最強の組み合わせ？科学と文化で読み解く理由</h3>
-              <p class="card-excerpt">こたつにみかんはなぜこんなにも合うのか？ビタミンC補給・低カロリー・香りのリラックス効果など科学的な理由と日本独自の文化的な背景を解説。</p>
-              <a href="articles/article-007" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <!-- 記事カード 6 -->
-          <article class="article-card">
-            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-recipe">レシピ</span>
-                <time>2026年4月14日</time>
-              </div>
-              <h3 class="card-title">みかんの皮を捨てないで！簡単・乾燥みかん皮（陳皮）の作り方と活用術</h3>
-              <p class="card-excerpt">みかんを食べたあとの皮、そのまま捨てていませんか？実は乾燥させるだけで「陳皮」という立派な漢方薬・スパイスに…</p>
-              <a href="articles/article-006" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <!-- 記事カード 5 -->
-          <article class="article-card">
-            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-region">産地</span>
-                <time>2026年4月15日</time>
-              </div>
-              <h3 class="card-title">愛媛・和歌山・静岡…みかん産地の違いで味はどう変わるのか徹底比較</h3>
-              <p class="card-excerpt">日本三大みかん産地といえば愛媛・和歌山・静岡。でもそれぞれの味の違い、ちゃんと説明できますか？産地ごとの特徴を…</p>
-              <a href="articles/article-005" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <!-- 記事カード 4 -->
-          <article class="article-card">
-            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-health">健康</span>
-                <time>2026年4月16日</time>
-              </div>
-              <h3 class="card-title">みかんを毎日3個食べると体はどう変わる？1ヶ月続けてみた結果</h3>
-              <p class="card-excerpt">ビタミンCの補給源として優秀なみかん。毎日3個を1ヶ月食べ続けると実際に体はどう変わるのか、パパが実験してみました…</p>
-              <a href="articles/article-004" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <!-- 記事カード 3 -->
-          <article class="article-card">
-            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="category cat-history">歴史</span>
-                <time>2026年4月17日</time>
-              </div>
-              <h3 class="card-title">温州みかんの「温州」って中国の地名？日本生まれなのになぜそう呼ばれるのか</h3>
-              <p class="card-excerpt">「温州みかん」という名前、なんとなく中国っぽいと思いませんか？実は温州みかんは日本生まれ。でも名前の由来は…</p>
-              <a href="articles/article-003" class="read-more">続きを読む →</a>
-            </div>
-          </article>
-
-          <!-- 記事カード 2 -->
           <article class="article-card">
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
@@ -1586,14 +1474,80 @@
             <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
             <div class="card-body">
               <div class="card-meta">
-                <span class="category cat-knowledge">豆知識</span>
-                <time>2026年4月19日</time>
+                <span class="category cat-history">歴史</span>
+                <time>2026年4月17日</time>
               </div>
-              <h3 class="card-title">みかんの「白いスジ」は食べた方がいい？実は体にうれしい成分の塊だった</h3>
-              <p class="card-excerpt">みかんを食べるとき、白いスジ（アルベド）を取り除いている人も多いのでは？実はこのスジ、栄養の宝庫なんです。ヘスペリジンやペクチンが豊富で…</p>
-              <a href="articles/article-001" class="read-more">続きを読む →</a>
+              <h3 class="card-title">温州みかんの「温州」って中国の地名？日本生まれなのになぜそう呼ばれるのか</h3>
+              <p class="card-excerpt">「温州みかん」という名前、なんとなく中国っぽいと思いませんか？実は温州みかんは日本生まれ。でも名前の由来は…</p>
+              <a href="articles/article-003" class="read-more">続きを読む →</a>
             </div>
           </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-health">健康</span>
+                <time>2026年4月16日</time>
+              </div>
+              <h3 class="card-title">みかんを毎日3個食べると体はどう変わる？1ヶ月続けてみた結果</h3>
+              <p class="card-excerpt">ビタミンCの補給源として優秀なみかん。毎日3個を1ヶ月食べ続けると実際に体はどう変わるのか、パパが実験してみました…</p>
+              <a href="articles/article-004" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-region">産地</span>
+                <time>2026年4月15日</time>
+              </div>
+              <h3 class="card-title">愛媛・和歌山・静岡…みかん産地の違いで味はどう変わるのか徹底比較</h3>
+              <p class="card-excerpt">日本三大みかん産地といえば愛媛・和歌山・静岡。でもそれぞれの味の違い、ちゃんと説明できますか？産地ごとの特徴を…</p>
+              <a href="articles/article-005" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-recipe">レシピ</span>
+                <time>2026年4月14日</time>
+              </div>
+              <h3 class="card-title">みかんの皮を捨てないで！簡単・乾燥みかん皮（陳皮）の作り方と活用術</h3>
+              <p class="card-excerpt">みかんを食べたあとの皮、そのまま捨てていませんか？実は乾燥させるだけで「陳皮」という立派な漢方薬・スパイスに…</p>
+              <a href="articles/article-006" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-history">文化</span>
+                <time>2026年4月13日</time>
+              </div>
+              <h3 class="card-title">こたつとみかんはなぜ最強の組み合わせ？科学と文化で読み解く理由</h3>
+              <p class="card-excerpt">こたつにみかんはなぜこんなにも合うのか？ビタミンC補給・低カロリー・香りのリラックス効果など科学的な理由と日本独自の文化的な背景を解説。</p>
+              <a href="articles/article-007" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image"><img src="illustrations/mikan.png" alt="" aria-hidden="true" class="card-illust"></div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category cat-select">保存</span>
+                <time>2026年4月12日</time>
+              </div>
+              <h3 class="card-title">みかんの正しい保存方法——常温・冷蔵・冷凍を使い分けて長持ちさせるコツ</h3>
+              <p class="card-excerpt">みかんを長持ちさせる正しい保存方法を解説。常温・冷蔵・冷凍それぞれの特徴と、箱みかんのカビを防ぐ「逆さ収納」など農家直伝のテクニックを紹介。</p>
+              <a href="articles/article-008" class="read-more">続きを読む →</a>
+            </div>
+          </article>
+
 
         </div>
 
