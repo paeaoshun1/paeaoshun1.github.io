@@ -1,0 +1,2 @@
+/articles/:slug.html   /articles/:slug   301!
+/:page.html            /:page            301!
