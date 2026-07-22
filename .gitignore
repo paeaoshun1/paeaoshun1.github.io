@@ -8,3 +8,10 @@
 # Windowsが自動生成するシステムファイル
 Thumbs.db
 ehthumbs.db
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
