@@ -1,1 +1,13 @@
+# macOSが自動生成するシステムファイル
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windowsが自動生成するシステムファイル
+Thumbs.db
+ehthumbs.db
+
+# Node.js
 node_modules/
